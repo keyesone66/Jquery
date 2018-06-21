@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="css/hdw.css"/>
+<script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		
+		var page = 1;
+		
+		var i = 4;
+		
+		//向右移动
+		
+		$(".next").click(function(){
+					//每个元素的所有祖先元素,body,html
+			var jq1 = $(this).parents(".a1");
+					//find查找
+			var jq2 = jq1.find(".a6");
+			
+			var jq3 = jq1.find(".a5");
+			       //width获取宽度
+			var jqwidth = jq3.width();
+					//length输出数目
+			var len = jq2.find("li").length;
+					//向上取整Math.ceil
+			var page_count = Math.ceil(len/i);
+					//正在执行动画效果的元素
+			if(!jq2.is(":animated")){
+				
+				if (page == page_count){
+					//与PHP语言类似
+				jq2.animate({left:'0px'},"slow");
+				
+				page = 1;					
+	
+					}else{
+					
+				jq2.animate({left:'-='+jqwidth},"slow");
+				
+				page++;	
+						
+				}				
+				
+			}
+			
+			jq1.find("span").eq((page-1)).addClass("one").siblings().removeClass("one");
+
+		});
+		
+		
+		//向左移动
+		
+		$(".prev").click(function(){
+			
+			var jq1 = $(this).parents(".a1");
+			
+			var jq2 = jq1.find(".a6");
+			
+			var jq3 = jq1.find(".a5");
+			
+			var jqwidth = jq3.width();
+			
+			var len = jq2.find("li").length;
+			
+			var page_count = Math.ceil(len/i);
+			
+			{if(!jq2.is(":animated")){
+							
+							if (page == 1){
+								
+							jq2.animate({left:'-='+jqwidth*(page_count-1)},"slow");
+							
+							page = page_count;					
+			
+								}else{
+								
+							jq2.animate({left:'+='+jqwidth},"slow");
+							
+							page--;	
+									
+							}				
+							
+						}
+						
+					jq1.find("span").eq((page-1)).addClass("one").siblings().removeClass("one");
+					
+					});
+					}
+		
+
+});
+	
+
+
+</script>
+</head>
+
+<body>
+<div class="a1">
+  <div class="a2">
+    <h1>图片展示</h1>
+    <div class="a3"> <span class="one">1</span> <span>2</span> <span>3</span> <span>4</span> </div>
+    <div class="a4"> <span class="prev">prev</span> <span class="next">next</span> </div>
+    <em><a href="#">更多>></a></em> </div>
+  <div class="a5">
+    <div class="a6">
+      <ul>
+        <li><a href="#"><img src="img/01.jpg" alt="hdw" /></a>
+          <h1><a href="#">标题q</a></h1>
+          <span>时间:<em>2011-9-26</em></span></li>
+        <li><a href="#"><img src="img/01.jpg" alt="hdw" /></a>
+          <h1><a href="#">标题w</a></h1>
+          <span>时间:<em>2011-9-26</em></span></li>
+        <li><a href="#"><img src="img/01.jpg" alt="hdw" /></a>
+          <h1><a href="#">标题e</a></h1>
+          <span>时间:<em>2011-9-26</em></span></li>
+        <li><a href="#"><img src="img/01.jpg" alt="hdw" /></a>
+          <h1><a href="#">标题r</a></h1>
+          <span>时间:<em>2011-9-26</em></span></li>
+        <li><a href="#"><img src="img/01.jpg" alt="hdw" /></a>
+          <h1><a href="#">标题t</a></h1>
+          <span>时间:<em>2011-9-26</em></span></li>
+        <li><a href="#"><img src="img/01.jpg" alt="hdw" /></a>
+          <h1><a href="#">标题y</a></h1>
+          <span>时间:<em>2011-9-26</em></span></li>
+        <li><a href="#"><img src="img/01.jpg" alt="hdw" /></a>
+          <h1><a href="#">标题u</a></h1>
+          <span>时间:<em>2011-9-26</em></span></li>
+        <li><a href="#"><img src="img/01.jpg" alt="hdw" /></a>
+          <h1><a href="#">标题i</a></h1>
+          <span>时间:<em>2011-9-26</em></span></li>
+        <li><a href="#"><img src="img/01.jpg" alt="hdw" /></a>
+          <h1><a href="#">标题o</a></h1>
+          <span>时间:<em>2011-9-26</em></span></li>
+        <li><a href="#"><img src="img/01.jpg" alt="hdw" /></a>
+          <h1><a href="#">标题p</a></h1>
+          <span>时间:<em>2011-9-26</em></span></li>
+        <li><a href="#"><img src="img/01.jpg" alt="hdw" /></a>
+          <h1><a href="#">标题a</a></h1>
+          <span>时间:<em>2011-9-26</em></span></li>
+        <li><a href="#"><img src="img/01.jpg" alt="hdw" /></a>
+          <h1><a href="#">标题s</a></h1>
+          <span>时间:<em>2011-9-26</em></span></li>
+        <li><a href="#"><img src="img/01.jpg" alt="hdw" /></a>
+          <h1><a href="#">标题d</a></h1>
+          <span>时间:<em>2011-9-26</em></span></li>
+        <li><a href="#"><img src="img/01.jpg" alt="hdw" /></a>
+          <h1><a href="#">标题f</a></h1>
+          <span>时间:<em>2011-9-26</em></span></li>
+        <li><a href="#"><img src="img/01.jpg" alt="hdw" /></a>
+          <h1><a href="#">标题g</a></h1>
+          <span>时间:<em>2011-9-26</em></span></li>
+        <li><a href="#"><img src="img/01.jpg" alt="hdw" /></a>
+          <h1><a href="#">标题h</a></h1>
+          <span>时间:<em>2011-9-26</em></span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body>
+</html>

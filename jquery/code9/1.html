@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+	
+	var x = 10;
+	
+	var y = 20;
+	
+	$(".box").mouseover(function(e){
+		
+		this.myTitle = this.title;
+		
+		this.title = "";
+		
+		
+		var hdw = "<div id='two'>"+this.myTitle+"</div>";
+		
+		$("body").append(hdw);
+		
+		$("#two")
+		
+		.css({
+				"left":(e.pageX+x)+"px",
+				"top":(e.pageY+y)+"px"	
+
+			}).show("fast");
+
+		}).mouseout(function(){
+			
+		this.title = this.myTitle;	
+			
+			
+		$("#two").remove();	
+			
+			
+			}).mousemove(function(e){
+				
+			$("#two")
+		
+			.css({
+				"left":(e.pageX+x)+"px",
+				"top":(e.pageY+y)+"px"	
+
+			});	
+				
+				
+			});
+
+	});
+		
+
+
+</script>
+<style type="text/css">
+
+body { font:12px "宋体"; padding:100px; }
+
+#two { width:300px; border:1px solid #ccc; background:#eee;  line-height:30px;  position:absolute; padding:10px; display:none;}
+
+</style>
+
+</head>
+
+<body>
+<a href="#" class="box" title="随着移动互联网的兴起，互联网行业正向更加智能化的Web3.0时代迈进，中国互联网行业进入了高速发展的势态，PHP语言已经为大部分企业广泛应用和重视（如：新浪、百度、腾讯、TOM、淘宝、搜狐、网易等）PHP语言是各大IT公司首选的互联网编程语言。PHP开发优势明显，未来发展空间巨大，IT行业急需PHP开发人才。">文字提示效果</a>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		
+		
+		$("a").hover(function(){
+			
+			//<!--$("p").addClass("one");-->
+			
+			$(this).parents("p").addClass("one");
+			
+		},function(){
+			
+		//<!--	$("p").removeClass("one");-->
+		
+			$(this).parents("p").removeClass("one");
+			
+			});
+		
+		
+		});
+
+</script>
+
+<style type="text/css">
+.one { background:orange; border:2px solid #000; color:#fff;}
+
+</style>
+</head>
+
+<body>
+<p>PHP语言的优势？</p>
+
+<p>随着移动互联网的兴起，互联网行业正向更加智能化的Web3.0时代迈进，中国互联网行业进入了高速发展的势态
+PHP语言已经为大部分企业广泛应用和重视）<a href="#">PHP语言</a>是各大IT公司首选的互联网编程语言。PHP开发优势明显，未来发展空间巨大，IT行业急需PHP开发人才。</p>
+
+</body>
+</html>

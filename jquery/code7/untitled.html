@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+	
+	
+	$('.box a').click(function(){
+		//slideToggle()上下滑动
+		$('.one').slideToggle();
+		//toggleClass('active');如果存在就删除,否则就添加
+		$(this).toggleClass('active');
+
+		});
+	
+	
+	$('.box p').hover(function(){
+		//鼠标移上添加一个类
+		$(this).addClass('hover');
+		},function(){
+
+		$(this).removeClass('hover');	
+
+
+		});	
+	
+	});
+
+
+</script>
+
+
+<style type="text/css">
+* { padding:0; margin:0;}
+
+body { font-size:12px;}
+
+
+a { text-decoration:none; color:#000; font-family:"宋体"; outline:none;}
+
+.box { width:550px; margin:0 auto;}
+
+.one { height:300px; background:#eee; display:none;}
+
+.box p { border-top:5px solid #ccc;background:url(img/1.gif) no-repeat center top;}
+
+.box p a { display:block; width:140px; height:40px; ; margin:0 auto; line-height:40px; text-align:center; font-size:14px; font-weight:bold; padding-right:10px; background:url(img/2.gif) no-repeat right -45px}
+
+
+.box p.hover { background:url(img/3.gif) no-repeat center top;}
+
+.box p a.active { background:url(img/2.gif) no-repeat right 12px;}
+
+</style>
+
+
+
+
+</head>
+
+<body>
+<div class="box">
+<div class="one">
+<img src="img/3.jpg" alt="hdw" />
+
+</div>
+<p><a href="#">菜 单</a></p>
+
+
+
+
+
+</div>
+
+
+</body>
+</html>

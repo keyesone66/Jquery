@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		//添加一个类active
+		$('.box h1:first').addClass('active');
+		//隐藏所有不是下标为p且不是第一个的值
+		$('.box p:not(:first)').hide();
+		
+		//鼠标移上
+		$('.box h1').hover(function(){
+		//添加一个hover类	
+		$(this).addClass('hover');
+		},function(){
+			//移除所有的‘hover类’
+		$(this).removeClass('hover');	
+
+			});
+		//鼠标点击	
+		$('.box h1').click(function(){
+		//旁边的p上下滑动
+			$(this).next('p').slideToggle()
+					//遍历所有的p，并向上滑动
+					.siblings('p').slideUp();	
+			        //如果active存在就删除，不存在就添加
+			$(this).toggleClass('active')
+					//遍历所有的h1，删除所有的active类
+					.siblings('h1').removeClass('active');
+
+			});
+				
+			
+		});
+	
+</script>
+<style type="text/css">
+* { padding:0; margin:0; }
+
+body { padding:100px; font:12px "宋体"; }
+
+.box { width:500px; border-bottom:1px solid #CCC; }
+
+.box h1 { height:30px; line-height:30px; padding:0 10px; font-size:12px; cursor:pointer; border:1px solid #ccc; border-bottom:none; background:#eee url(img/bg.gif) no-repeat right -27px; }
+
+.box h1.hover { background-color:#e3e2e2; }
+
+.box h1.active { background-position:right 7px; }
+
+.box p { padding:10px; border-left:1px solid #ccc; border-right:1px solid #ccc; }
+</style>
+</head>
+
+<body>
+<div class="box">
+  <h1>标题一</h1>
+  <p>内容</p>
+  <p>内容</p>
+  <p>内容</p>
+  <h1>标题二</h1>
+  <p>内容</p>
+  <h1>标题三</h1>
+  <p>内容</p>
+  <h1>标题四</h1>
+  <p>内容</p>
+  <h1>标题五</h1>
+  <p>内容</p>
+</div>
+</body>
+</html>

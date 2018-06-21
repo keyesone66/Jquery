@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+<script type="text/javascript">
+
+
+	$(document).ready(function(){
+
+			
+			$("#CheckedAll").click(function(){
+				
+				
+				if (this.checked){
+					
+					$("[name=one]:checkbox").attr("checked",true);
+					
+					}else{	
+						
+					$("[name=one]:checkbox").attr("checked",false);	
+						
+						}
+				
+		/*		$("[name=checkboxt]:checkbox").attr("checked",this.checked);*/
+
+				});
+		
+	$("#send").click(function(){
+		
+		var str ="你的爱好是:\r\n";
+		
+		$("[name=one]:checkbox:checked").each(function(){
+			
+			
+			str+=$(this).val()+"\r\n";
+			
+			
+			});
+		
+		
+		
+		
+		alert(str);
+		
+		
+		});
+		
+		
+		
+		});
+
+
+
+</script>
+</head>
+
+<body>
+<form method="post" action="">
+你的爱好是:<input type="checkbox" id="CheckedAll" />全选/全不选
+<br />
+<input type="checkbox" name="one" value="唱歌" />唱歌
+<input type="checkbox" name="one" value="跳舞" />跳舞
+<input type="checkbox" name="one" value="看书" />看书
+<input type="checkbox" name="one" value="运动" />运动
+<br />
+<input type="button" id="send" value="提交" />
+
+
+
+
+</form>
+</body>
+</html>

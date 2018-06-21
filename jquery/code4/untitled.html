@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+	//隐藏所有的ct  gt(0)gt选择器选择第一个开始的所有的数
+	$('.ct:gt(0)').hide();
+	//
+	var hdw = $('.box ul li');
+	//鼠标移上添加一个样式
+	hdw.hover(function(){
+		
+		$(this).addClass('two')
+				.siblings().removeClass('two');
+		
+		});
+	
+
+	hdw.click(function(){
+		//添加一个样式,并且删除除这个样式的所有样式
+		$(this).addClass('one')
+				.siblings().removeClass();
+		
+		//index()获取一个元素的名称和值，说白了就是获取ct的下标
+	var hdw_index = hdw	.index(this);
+	    //显示相应下标的值，隐藏其他的
+	$('.ct').eq(hdw_index).show()
+			.siblings().hide();
+
+		});
+
+	});
+
+</script>
+
+<style type="text/css">
+* { padding:0; margin:0;}
+body { font-size:12px; padding:120px;}
+ul { list-style-type:none;}
+.box ul { height:30px; line-height:30px;}
+.box ul li { float:left; padding:0 10px; position:relative; cursor:pointer; border:1px solid #000; margin-right:5px; border-bottom:none;}
+
+.box ul li.two { background:red;}
+
+
+
+.content { width:325px; border:1px solid #000; padding:10px; height:100px;}
+
+* html .content { margin-top:-1px;}
+
+
+.box ul li.one { background:#fff;}
+
+
+
+
+
+</style>
+
+
+</head>
+
+<body>
+
+<div class="box">
+<ul>
+<li class="one">课程介绍</li>
+<li>报名流程</li>
+<li>常见问题</li>
+</ul>
+<div class="content">
+<div class="ct">随着移动互联网的兴起 </div>
+<div class="ct">这里有后盾名学员对后盾网视频的评价 </div>
+<div class="ct">PHP主讲老师具有多年项目开发经验及企业培训经验 </div
+
+</div>
+
+
+</div>
+
+</body>
+</html>

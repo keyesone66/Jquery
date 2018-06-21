@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+	 // x和y表示了title框与元素之间横轴和纵轴之间的距离
+	var x = 10;
+	
+	var y = 20;
+	//鼠标指针位于元素之上
+	$(".box").mouseover(function(e){
+		
+		this.myTitle = this.title;//获取默认的title
+		
+		this.title = "";//获取后将默认的清空
+		
+		var imgTitle;
+		
+		if (this.myTitle){
+			//为title添加一个<br>标签
+			imgTitle = "<br />"+this.myTitle;
+			
+			
+			}else{
+				
+			imgTitle = "";
+				
+				
+				
+				}
+		
+		
+		var hdw = "<div id='two'><img src='"+ this.href +"' alt='hdw' />"+imgTitle+"<\/div>";
+		
+		
+		
+		
+		
+		
+		//插入内容
+		$("body").append(hdw);
+		//实现title跟随
+		$("#two")
+		
+		.css({
+				"left":(e.pageX+x)+"px",
+				"top":(e.pageY+y)+"px"	
+
+			}).show("fast");
+             //当鼠标指针从元素上移开时触发事件
+		}).mouseout(function(){
+		//将title的元素名称还原
+		this.title = this.myTitle;	
+			
+		//删除匹配的元素	
+		$("#two").remove();	
+			
+			  //当鼠标指针在指定的元素中移动时触发事件
+			}).mousemove(function(e){
+				
+			$("#two")
+		
+			.css({
+				"left":(e.pageX+x)+"px",
+				"top":(e.pageY+y)+"px"	
+
+			});	
+				
+				
+			});
+
+	});
+	
+	
+
+	
+	
+	//]]>	
+
+
+</script>
+
+
+<style type="text/css">
+
+body { font:12px "宋体"; padding:100px; }
+
+img { border:none;}
+
+#two { border:1px solid #ccc; background:#eee;   line-height:30px;  position:absolute; border:5px solid #ccc; display:none; text-align:center; font-size:14px; font-weight:bold;}
+
+</style>
+
+</head>
+
+<body>
+<a href="img/dt.jpg" class="box" title="烨竹"><img src="img/xt.jpg" alt="hdw" /></a>
+</body>
+</html>
